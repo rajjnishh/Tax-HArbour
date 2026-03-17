@@ -23,7 +23,7 @@ export const ReviewCarousel: React.FC<{ reviews: Review[] }> = ({ reviews }) => 
         {duplicatedReviews.map((review, index) => (
           <div 
             key={index} 
-            className="w-[300px] md:w-[400px] flex-shrink-0 mx-4 glass-card p-6 md:p-8 rounded-3xl flex flex-col h-full border border-gray-100 hover:border-brand-red/20 transition-colors"
+            className="w-[300px] md:w-[400px] h-[320px] md:h-[350px] flex-shrink-0 mx-4 glass-card p-6 md:p-8 rounded-3xl flex flex-col border border-gray-100 hover:border-brand-red/20 transition-colors"
           >
             <div className="flex text-yellow-400 mb-4">
               {[...Array(review.rating || 5)].map((_, i) => (

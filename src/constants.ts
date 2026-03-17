@@ -100,56 +100,56 @@ export const TESTIMONIALS = [
     name: "Capt. Rajesh Kumar",
     role: "Master Mariner",
     feedback: "TaxHarbour has been a lifesaver. As a seafarer, understanding residency rules was always confusing. Their team handled my ITR and DTAA benefits perfectly. Highly recommended!",
-    image: "https://i.pravatar.cc/150?u=rajesh",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5
   },
   {
     name: "Anjali Sharma",
     role: "NRI - United Kingdom",
     feedback: "Excellent service for NRI taxation. They helped me with my rental income in India and ensured I was fully compliant with both Indian and UK tax laws. Very professional.",
-    image: "https://i.pravatar.cc/150?u=anjali",
+    image: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5
   },
   {
     name: "Vikram Singh",
     role: "Chief Engineer",
     feedback: "The best tax consultants for seafarers. They resolved a complex income tax notice I received while I was on board. Their expertise in maritime tax is unmatched.",
-    image: "https://i.pravatar.cc/150?u=vikram",
+    image: "https://randomuser.me/api/portraits/men/46.jpg",
     rating: 5
   },
   {
     name: "Amit Desai",
     role: "2nd Officer",
     feedback: "Filing taxes while sailing used to be a nightmare. Tax Harbour's seamless online process and deep understanding of NRE accounts and seafarer exemptions made it incredibly easy.",
-    image: "https://i.pravatar.cc/150?u=amit",
+    image: "https://randomuser.me/api/portraits/men/22.jpg",
     rating: 5
   },
   {
     name: "Dr. Meera Reddy",
     role: "NRI - United Arab Emirates",
     feedback: "I was struggling with the repatriation of funds and the associated tax implications. The team at Tax Harbour provided clear, actionable advice that saved me significant time and money.",
-    image: "https://i.pravatar.cc/150?u=meera",
+    image: "https://randomuser.me/api/portraits/women/68.jpg",
     rating: 5
   },
   {
     name: "Rohan Kapoor",
     role: "Electro-Technical Officer (ETO)",
     feedback: "Their proactive approach to tax planning is brilliant. They guided me on how to maintain my Non-Resident status effectively during my sign-off periods. Truly a premium service.",
-    image: "https://i.pravatar.cc/150?u=rohan",
+    image: "https://randomuser.me/api/portraits/men/57.jpg",
     rating: 5
   },
   {
     name: "Sanjay Patel",
     role: "NRI - Singapore",
     feedback: "Managing capital gains from Indian mutual funds was getting complicated. Tax Harbour stepped in, streamlined my portfolio's tax compliance, and filed everything flawlessly.",
-    image: "https://i.pravatar.cc/150?u=sanjay",
+    image: "https://randomuser.me/api/portraits/men/66.jpg",
     rating: 5
   },
   {
     name: "Capt. David Fernandez",
     role: "Master Mariner",
     feedback: "I've trusted them with my finances for over five years. Whether it's handling foreign remittances or ensuring strict compliance with the latest tax codes, they never disappoint.",
-    image: "https://i.pravatar.cc/150?u=david",
+    image: "https://randomuser.me/api/portraits/men/77.jpg",
     rating: 5
   }
 ];
