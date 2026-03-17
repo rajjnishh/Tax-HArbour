@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { BRAND, SERVICES, FAQS, TESTIMONIALS } from '../constants';
 import { LeadForm, ServiceCard, PricingCard, TestimonialCard, AddToCalendar, FAQAccordion } from '../components/UI';
+import { ReviewCarousel } from '../components/ReviewCarousel';
 import { Shield, Users, Award, Clock, Star, ArrowRight, ChevronDown, CheckCircle2 } from 'lucide-react';
 
 export const Home = () => {
@@ -177,24 +178,16 @@ export const Home = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 px-6 bg-gray-50/30">
-        <div className="max-w-7xl mx-auto space-y-16">
+      <section className="py-24 bg-gray-50/30 overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-16 px-6">
           <div className="text-center space-y-4 max-w-2xl mx-auto">
             <h2 className="text-4xl font-bold text-brand-blue-dark">Trusted by 1000+ Professionals</h2>
             <p className="text-gray-500">Don't just take our word for it. Here's what our clients have to say about their experience with TaxHarbour.</p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {TESTIMONIALS.map((testimonial, i) => (
-              <TestimonialCard 
-                key={i} 
-                name={testimonial.name}
-                role={testimonial.role}
-                feedback={testimonial.feedback}
-                image={testimonial.image}
-              />
-            ))}
-          </div>
+        </div>
+        
+        <div className="mt-12">
+          <ReviewCarousel reviews={TESTIMONIALS} />
         </div>
       </section>
 

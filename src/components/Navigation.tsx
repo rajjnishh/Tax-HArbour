@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, MessageCircle, Calendar, Menu, X, Linkedin, Facebook, Instagram } from 'lucide-react';
+import { Phone, MessageCircle, Calendar, Menu, X, Linkedin, Facebook, Instagram, ArrowUp } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { BRAND } from '../constants';
 import { clsx, type ClassValue } from 'clsx';
@@ -39,7 +39,7 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link to="/" className="flex items-center gap-1">
-            <span className="text-2xl font-bold tracking-tighter text-brand-blue-dark">
+            <span className="text-3xl font-bold tracking-tighter text-brand-blue-dark">
               Tax<span className="text-brand-red">Harbour</span>
             </span>
           </Link>
@@ -134,7 +134,7 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         <div className="space-y-6">
           <Link to="/" className="inline-block">
-            <span className="text-2xl font-bold tracking-tighter text-white">
+            <span className="text-3xl font-bold tracking-tighter text-white">
               Tax<span className="text-brand-red">Harbour</span>
             </span>
           </Link>
@@ -202,8 +202,44 @@ export const Footer = () => {
 };
 
 export const FloatingButtons = () => {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const checkScrollTop = () => {
+      // Show button when scrolled down more than halfway
+      if (!showScroll && window.scrollY > document.documentElement.scrollHeight / 2 - window.innerHeight / 2) {
+        setShowScroll(true);
+      } else if (showScroll && window.scrollY <= document.documentElement.scrollHeight / 2 - window.innerHeight / 2) {
+        setShowScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', checkScrollTop);
+    return () => window.removeEventListener('scroll', checkScrollTop);
+  }, [showScroll]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col gap-3">
+      <AnimatePresence>
+        {showScroll && (
+          <motion.button
+            initial={{ opacity: 0, scale: 0.5, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={scrollToTop}
+            className="w-14 h-14 bg-gray-800 text-white rounded-full flex items-center justify-center shadow-lg hover:shadow-gray-800/40 transition-shadow mb-2"
+            aria-label="Scroll to top"
+          >
+            <ArrowUp size={28} />
+          </motion.button>
+        )}
+      </AnimatePresence>
       <motion.a
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { BRAND, SERVICES } from '../constants';
 import { CheckCircle2, Star, ArrowRight, FileText, PieChart, AlertCircle, ClipboardCheck, Globe, Ship, TrendingUp, ShieldCheck, Calendar, ExternalLink, ChevronDown } from 'lucide-react';
 
@@ -260,15 +260,22 @@ export const FAQAccordion = ({ items }: { items: { question: string, answer: str
               className={cn("transition-transform duration-300", openIndex === i ? "rotate-180" : "")} 
             />
           </button>
-          <motion.div
-            initial={false}
-            animate={{ height: openIndex === i ? 'auto' : 0, opacity: openIndex === i ? 1 : 0 }}
-            className="overflow-hidden"
-          >
-            <div className="px-6 pb-6 text-gray-500 text-sm leading-relaxed">
-              {item.answer}
-            </div>
-          </motion.div>
+          <AnimatePresence initial={false}>
+            {openIndex === i && (
+              <motion.div
+                key="content"
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: 'auto', opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
+                className="overflow-hidden"
+              >
+                <div className="px-6 pb-6 text-gray-500 text-sm leading-relaxed">
+                  {item.answer}
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       ))}
     </div>
